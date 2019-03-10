@@ -1,28 +1,27 @@
 package edu.cnm.deepdive;
 
+import java.util.Arrays;
+
 public class Matrices {
 
   public static void main(String[] args) {
+    int[][] testMat = {{3,4}, {5,6}};
     Matrices matrices = new Matrices();
-    System.out.println(matrices.rotate());
+    matrices.rotate(testMat);
+    System.out.println(Arrays.toString(testMat));
   }
 
   public static int[][] rotate(int[][] data) {
 
     int[][] returnData = new int[data.length][data.length];
 
-    for (int i = 0; i < data.length; i++) {
-      for (int j = 0; j < data.length; j++) {
-        int[][] tempData = new int[i][j];
-        returnData[1][0] = data[0][0];
-        returnData[0][0] = data[0][1];
-        returnData[1][1] = data[1][0];
-        returnData[0][1] = data[1][1];
-
-
+    for (int c = 0; c < data.length; c++) {
+      for (int r = 0; r < data.length; r++) {
+        returnData[c][data.length - 1 - r] = data[c][r];
       }
     }
 
+    return returnData;
   }
 
 }
