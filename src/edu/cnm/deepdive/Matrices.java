@@ -17,7 +17,7 @@ public class Matrices {
 
     for (int c = 0; c < data.length; c++) {
       for (int r = 0; r < data.length; r++) {
-        returnData[c][data.length - 1 - r] = data[c][r];
+        returnData[c][r] = data[c][data.length - 1 - r];
       }
     }
 
